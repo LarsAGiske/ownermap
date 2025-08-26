@@ -1,0 +1,95 @@
+<!-- Mobile-Optimized Embed Code for Tromsø Airbnb Temporal Activity Map -->
+
+<!-- Option 1: Smart responsive height (RECOMMENDED) -->
+<div id="airbnb-map" style="width: 100%; height: 600px;">
+    <iframe 
+        src="https://larsagiske.github.io/airbnbheatmap/" 
+        style="width: 100%; height: 100%; border: 0;"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+<script>
+    function setMapHeight() {
+        const container = document.getElementById('airbnb-map');
+        if (window.innerWidth <= 768) {
+            // Mobile: Use most of viewport, leaving room for browser UI
+            container.style.height = '85vh';
+        } else {
+            // Desktop: Fixed height
+            container.style.height = '600px';
+        }
+    }
+    setMapHeight();
+    window.addEventListener('resize', setMapHeight);
+</script>
+
+<!-- Option 2: CSS-only responsive (no JavaScript) -->
+<style>
+    .airbnb-heatmap {
+        width: 100%;
+        height: 600px;
+    }
+    
+    @media (max-width: 768px) {
+        .airbnb-heatmap {
+            height: 80vh;
+            min-height: 500px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .airbnb-heatmap {
+            height: 90vh;
+            min-height: 450px;
+        }
+    }
+    
+    .airbnb-heatmap iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+</style>
+<div class="airbnb-heatmap">
+    <iframe 
+        src="https://larsagiske.github.io/airbnbheatmap/" 
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<!-- Option 3: Full height mobile, standard desktop -->
+<div style="width: 100%; height: 600px;" class="map-container">
+    <style>
+        @media (max-width: 768px) {
+            .map-container {
+                height: calc(100vh - 50px) !important; /* Full height minus some UI space */
+            }
+        }
+    </style>
+    <iframe 
+        src="https://larsagiske.github.io/airbnbheatmap/" 
+        style="width: 100%; height: 100%; border: 0;"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<!-- Option 4: Simple inline responsive -->
+<iframe 
+    src="https://larsagiske.github.io/airbnbheatmap/" 
+    style="width: 100%; height: min(600px, 85vh); border: 0;"
+    frameborder="0"
+    allowfullscreen>
+</iframe>
+
+<!-- Option 5: WordPress-friendly with container query -->
+<div style="width: 100%; container-type: inline-size;">
+    <iframe 
+        src="https://larsagiske.github.io/airbnbheatmap/" 
+        style="width: 100%; height: clamp(450px, 75vh, 700px); border: 0;"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
